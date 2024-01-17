@@ -6,16 +6,18 @@
   <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/qqdNH4bh/Cyber-Toxin.jpg">
   <title>Cyber Toxin | Tools</title>
   <meta name="description" content="Coding tutorials, web development, and tech education for beginners in Bangladesh. Join Md. Harunur Roshid on a coding journey.">
-    <meta name="keywords" content="Coding tutorials, Programming for beginners, Web development, Tech education, Learn coding online, Bangladesh coding community, Md. Harunur Roshid, Programming challenges, Code learning resources, Student coder journey">
-    <meta name="author" content="Md. Harunur Roshid">
+  <meta name="keywords" content="Coding tutorials, Programming for beginners, Web development, Tech education, Learn coding online, Bangladesh coding community, Md. Harunur Roshid, Programming challenges, Code learning resources, Student coder journey">
+  <meta name="author" content="Md. Harunur Roshid">
   <style>
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       font-family: 'Roboto Mono', monospace;
       background: #1a1a1a;
       color: #00ff00;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       display: flex;
@@ -23,13 +25,16 @@
       align-items: center;
       padding: 10px 20px;
       background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
     header h1 {
       font-size: 24px;
       display: flex;
       align-items: center;
       text-shadow: 0px 1px 12px aqua;
-      background:url('https://i.hizliresim.com/gqaEb3.gif');
+      background: url('https://i.hizliresim.com/gqaEb3.gif');
     }
     header h1 img {
       width: 50px;
@@ -53,7 +58,7 @@
     }
     main {
       overflow-y: auto;
-      height: 70vh;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -80,6 +85,12 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
+    }
+    .app-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
     }
     .app {
       text-decoration: none;
@@ -110,9 +121,9 @@
       font-size: 10px;
       padding: 10px;
       background-color: #333;
-      position: fixed;
+      position: sticky;
       bottom: 0;
-      width: 100%;
+      z-index: 1;
     }
   </style>
 </head>
@@ -135,11 +146,13 @@
         <img src="https://i.postimg.cc/qqdNH4bh/Cyber-Toxin.jpg" alt="Cyber-Toxin">
       </div>
     </div>
-    <a href="cc_gen/index.html" class="app"><h3>CC GEN</h3></a>
-    <a href="https://livecc.teamcsb.com/live-cc-checker/" class="app"><h3>CC CHECK</h3></a>
-    <a href="bin_gen/index.html" class="app"><h3>BIN GEN</h3></a>
-    <a href="fb_live_chk/index.html" class="app"><h3>FB LIVE CHECK</h3></a>
-    <a href="ua_gen/index.html" class="app"><h3>UA GEN</h3></a>
+    <div class="app-container">
+      <a href="cc_gen/index.html" class="app"><h3>CC GEN</h3></a>
+      <a href="https://livecc.teamcsb.com/live-cc-checker/" class="app"><h3>CC CHECK</h3></a>
+      <a href="bin_gen/index.html" class="app"><h3>BIN GEN</h3></a>
+      <a href="fb_live_chk/index.html" class="app"><h3>FB LIVE CHECK</h3></a>
+      <a href="ua_gen/index.html" class="app"><h3>UA GEN</h3></a>
+    </div>
   </main>
   <footer>
     &copy; 2024 Cyber Toxin. All rights reserved.
