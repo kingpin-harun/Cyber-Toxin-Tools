@@ -1,0 +1,284 @@
+
+button {
+  border: 2px solid black;
+  padding: 7px;
+  margin-top: 10px;
+  width: 100px; 
+  margin: 0 auto;
+    
+}
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  margin: 0; 
+  min-height: 100dvh;
+  font-family: 'Roboto Mono', monospace;
+}
+.selected-option input[type="checkbox"] {
+  width: 62px;
+}
+
+.h1 {
+  font-size: 1.75em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #ffffff;
+  border: 2px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
+}
+
+.center {
+  text-align: center;
+}
+
+.input-box, #user-agent-box {
+  border: 2px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#user-agent-box {
+  border: 1px solid #0f0e0e;
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+.select-box {
+  display: inline-block;
+  position: relative;
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.bullet-icon {
+  margin-right: 10px;
+}
+
+/* Styling the dropdown arrow */
+#selectOption {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Styling the dropdown menu */
+#selectOption option {
+  background-color: white;
+  color: black;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .selected-option {
+    padding: 8px;
+  }
+  
+  .bullet-icon {
+    font-size: 18px;
+  }
+  
+  #selectOption {
+    font-size: 12px;
+  }
+}
+@media (min-width: 769px) {
+  .selected-option {
+    padding: 10px;
+  }
+  
+  .bullet-icon {
+    font-size: 20px;
+  }
+  
+  #selectOption {
+    font-size: 14px;
+  }
+}
+#user-agents {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #595959;
+  border-radius: 5px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+#user-agent-box button {
+  background-color: #007bff;
+  color: #000000;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#user-agent-box button:hover {
+  background-color: #0056b3;
+}
+
+#generation-time-box {
+  margin-bottom: 10px;
+}
+
+#generation-time {
+  font-weight: bold;
+}
+
+#download-button-box {
+  margin-top: 10px;
+}
+
+/* Dark Mode and Light Mode Switch */
+.mode-switch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .h1, .dark-mode .input-box, .dark-mode #user-agent-box, .dark-mode #user-agents,
+.dark-mode #user-agent-box button, .dark-mode #generation-time-box {
+  border-color: #ea48f1;
+  background-color: #190000;
+}
+
+.dark-mode #user-agents {
+  border-color: #474747;
+}
+
+.dark-mode #user-agents {
+  border-color: #595959;
+}
+
+.dark-mode #user-agent-box button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode #user-agent-box button:hover {
+  background-color: #cccccc;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-mode .h1, .light-mode .input-box, .light-mode #user-agent-box, .light-mode #user-agents,
+.light-mode #user-agent-box button, .light-mode #generation-time-box {
+  border-color: #000000;
+  background-color: #f7f7f7;
+}
+
+.light-mode #user-agents {
+  border-color: #dddddd;
+}
+
+.light-mode #user-agents {
+  border-color: #e5e5e5;
+}
+
+.light-mode #user-agent-box button {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.light-mode #user-agent-box button:hover {
+  background-color: #333333;
+}
+footer { /* Changed .footer to just footer */
+  background-color: #d70404;
+  color: #000000;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
