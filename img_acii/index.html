@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image to ASCII Converter</title>
+  <script src="/cdn-cgi/apps/head/fryZ_Uj6CbCudOGB3zPCkSEHWfg.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #image-container {
+      margin-bottom: 20px;
+    }
+
+    #ascii-container {
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      border: 2px solid #00FF00; /* Green border */
+      box-sizing: border-box;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Green glowing effect */
+    }
+
+    pre {
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    #copy-btn {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    #copy-btn:hover {
+      background-color: #45a049;
+    }
+
+    #image-input {
+      background-color: black;
+      color: white;
+      border: 2px solid #00FF00; /* Green border for file input */
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="image-container">
+      <input type="file" id="image-input" accept="image/*"><br>
+    </div>
+    <div id="ascii-container">
+      <pre id="ascii-output"></pre>
+    </div>
+    <button id="copy-btn">Copy ASCII</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
