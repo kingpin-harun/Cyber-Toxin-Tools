@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <title>User Agent Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="center">
+    <div id="generation-time-box" class="input-box">
+      <strong class="time">Generation Time:</strong> <span id=
+      "generation-time"></span>
+    </div>
+    <div class="select-box">
+      <div class="selected-option">
+        <label><input type="checkbox" name="option1" value=
+        "option1"> APP FB</label> <label><input type="checkbox"
+        name="option2" value="option2"> DALVIK FB</label>
+      </div><br>
+      <br>
+      <input class="input-box" placeholder="Enter Device Name"
+      type="text" id="device-name" required=""><br>
+      <br>
+      <input class="input-box" placeholder="Enter Device Model"
+      type="text" id="device-model" required=""><br>
+      <br>
+      <input class="input-box" placeholder=
+      "Enter Number of User Agents" type="number" id=
+      "user-agent-count" min="1" required="">
+      <div id="click">
+        <button class="line-height: 2" type="button" onclick=
+        "generateUserAgents()">Generate</button>
+      </div>
+      <div id="output-box">
+        <div id="user-agent-box">
+          <p id="user-agents"></p>
+          <div style="display: inline-block;">
+            <button onclick="copyToClipboard()">Copy</button>
+            <button type="button" onclick=
+            "downloadUserAgents()">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scriptx.js"></script>
+  </div>
+</body>
+</html>
