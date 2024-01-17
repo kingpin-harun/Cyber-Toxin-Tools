@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVE CHECKER | FB</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000000; /* Black background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        text-align: center;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        justify-content: center;
+        color: #00ff00; /* Green text */
+    }
+
+    textarea {
+        width: 98%;
+        height: 160px;
+        background-color: #00ff00; /* Green background */
+        color: #006400; /* Dark Green text */
+        border: 2px solid #00ff00; /* Green border */
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5) inset; /* Green glow effect */
+        transition: box-shadow 0.3s ease-in-out;
+        font-size: 18px;
+        line-height: 24px;
+        resize: none;
+        justify-content: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #00ff00; /* Green button background */
+        color: #000000; /* Black button text */
+        border: 2px solid #00ff00; /* Green border */
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 10px;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow effect */
+        transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #006400; /* Dark Green on hover */
+        box-shadow: 0 0 20px rgba(0, 100, 0, 0.7); /* Dark Green glow effect on hover */
+    }
+
+    .result-box {
+        border: 2px solid #006400; /* Dark Green border */
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        height: 200px; 
+        overflow-y: auto;
+        box-shadow: 0 0 10px rgba(0, 100, 0, 0.5); /* Dark Green glow effect */
+    }
+
+    #counts {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-top: 5px;
+        background-color: #00ff00; /* Green background */
+        color: #000000; /* Black text */
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow effect */
+    }
+
+    #counts p {
+        font-size: 12px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #00ff00; /* Green background */
+        color: #000000; /* Black text */
+        text-align: center;
+        padding: 15px 0;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow effect */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>LIVE CHECKER | FB</h1>
+    <textarea id="idInput" placeholder="100090240011166|696969"></textarea>
+    <div id="counts">
+      <p>TOTAL IDS : <span id="all-ids">0</span></p>
+      <p>LIVE IDS : <span id="ok-ids">0</span></p>
+      <p>LOCKED IDS : <span id="cp-ids">0</span></p>
+    </div>
+    <button id="chkbtn">START</button>
+    <button id="clrbtn">CLEAR IDS</button><br>
+    <button id="cplock">COPY LOCKED IDS</button>
+    <button id="cplive">COPY LIVE IDS</button>
+    <div class="result-box" id="live-results">
+      <h2>LIVE IDS</h2>
+    </div>
+    <div class="result-box" id="lock-results">
+      <h2>LOCKED IDS</h2>
+    </div>
+  </div>
+  <div class="footer" style="margin:0;">
+    <h6 style="margin: 0;">Â© Team Peaky-XD 2023</h6>
+  </div>
+  <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>
