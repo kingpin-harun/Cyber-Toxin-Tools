@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIN Generator">
+  <title>Bin Generator | Cyber Toxin</title>
+  <style>
+    body {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+        background-color: black;
+        color: #00ff00; /* Green text */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 300px;
+        background-color: #000000; /* Black background */
+        border: 2px solid #00ff00; /* Green border */
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00ff00; /* Green box shadow */
+        padding: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    select, input, button {
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid #00ff00; /* Green border */
+        border-radius: 10px;
+        background-color: #000000; /* Black background */
+        color: #00ff00; /* Green text */
+        width: calc(100% - 20px); /* Adjusted width */
+        font-size: 16px;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    select:focus, input:focus, button:focus {
+        outline: none;
+        border-color: #007BFF; /* Change focus color if needed */
+    }
+
+    button {
+        background-color: #00ff00; /* Green button */
+        color: black; /* Black button text */
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #007BFF; /* Hover color */
+        box-shadow: 0 0 20px #007BFF; /* Hover box shadow */
+    }
+
+    textarea {
+        margin-top: 10px;
+        padding: 10px;
+        border: 2px solid #00ff00; /* Green border */
+        border-radius: 10px;
+        background-color: #000000; /* Black background */
+        color: #00ff00; /* Green text */
+        box-shadow: 0 0 10px #00ff00; /* Green box shadow */
+        width: calc(100% - 20px); /* Adjusted width */
+        font-size: 16px;
+    }
+
+    .footer {
+        background-color: #00ff00; /* Green footer background */
+        color: black; /* Black footer text */
+        padding: 10px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer a {
+        color: #00ff00; /* Green footer link color */
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bin Generator</h1>
+    <div class="card-selection">
+      <label for="cardType">Card Type:</label>
+      <select id="cardType">
+        <option value="visa">Visa</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="amex">American Express</option>
+        <option value="discover">Discover</option>
+      </select>
+    </div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" min="1" value="1">
+    <button onclick="generateBins()">Generate Bins</button>
+    <textarea id="binResult" rows="5" readonly></textarea>
+    <button onclick="copyToClipboard()">Copy Bins</button>
+  </div>
+  <div class="footer">
+    2024 Cyber Toxin. All rights reserved.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
