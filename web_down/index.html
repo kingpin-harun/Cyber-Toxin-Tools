@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 600px;
+      background-color: #000000;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+      text-align: center;
+      color: #00FF00;
+      font-family: 'Monospace', monospace;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #00FF00;
+    }
+
+    input {
+      width: 95%;
+      padding: 8px;
+      margin-bottom: 15px;
+      color: #00FF00;
+      border: 2px solid #00FF00;
+      background: #000000;
+    }
+
+    input::placeholder {
+      color: darkgreen;
+    }
+
+    button {
+      background-color: #00FF00;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #downloadResult {
+      margin-top: 20px;
+      color: #00FF00;
+    }
+
+    #loadingIndicator {
+      width: 20px;
+      height: 20px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #00FF00;
+      color: #000;
+      text-align: center;
+      padding: 15px 0;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Source Downloader</h1>
+    <form id="downloadForm" action="download.php" method="post" name="downloadForm">
+      <label for="sourceLink">Website Link:</label>
+      <input type="text" id="sourceLink" name="sourceLink" placeholder="Enter website link" required="">
+      <button type="submit" id="submitBtn">Download</button>
+      <div id="loadingIndicator" class="hidden"></div>
+    </form>
+    <div id="downloadResult"></div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('downloadForm');
+      const resultDiv = document.getElementById('downloadResult');
+      const submitBtn = document.getElementById('submitBtn');
+      const loadingIndicator = document.getElementById('loadingIndicator');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const sourceLink = document.getElementById('sourceLink').value;
+
+        loadingIndicator.classList.remove('hidden');
+        submitBtn.disabled = true;
+
+        fetch('download.php', {
+          method: 'POST',
+          body: new URLSearchParams({ 'sourceLink': sourceLink }),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        })
+        .then(response => response.json())
+        .then(data => {
+          loadingIndicator.classList.add('hidden');
+          submitBtn.disabled = false;
+          resultDiv.innerHTML = `<p>${data.message}</p>`;
+        })
+        .catch(error => console.error('Error:', error));
+      });
+    });
+  </script>
+  <footer class="footer">
+    © Cyber Toxin 2024
+  </footer>
+</body>
+  </html>
